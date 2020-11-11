@@ -334,16 +334,19 @@ int main()
 
 int main()
 {
+	
 	int n;
 	printf("enter no of elements in array :");
 	scanf("%d",&n);
 	
+
 	char *p=(char*) malloc(n*sizeof(char ));
 	int i;
 	
 	for(i=0;i<n;i++)
 	{
-		printf("Enter characters  %d :",i+1);
+		fflush(stdin);
+		printf("Enter characters  %d = ",i+1);
 		scanf("%c",&p[i]);
 	}
 	

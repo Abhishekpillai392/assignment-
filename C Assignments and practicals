@@ -262,7 +262,6 @@ void myfucntion (int *p1, int *p2)
 
 	{
 	int x=10, y=20;
-	int x,*y;
 	p1=&x;
 	p2=&y;
 	 
@@ -282,10 +281,6 @@ void myfucntion (int *p1, int *p2)
   36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
   ANS:#include<stdio.h>
 
-void show(int s,int t)
-{
-/*	int a;
-	z=(s+t);*/
 }
 void display(int *s,int *t)
 {
@@ -299,7 +294,6 @@ int main()
 	int x=20;
 	int y=30;
 	
-	show(x,y);
 	printf("%d %d\n",x,y);
 	display(&x,&y);
 
@@ -311,12 +305,12 @@ int main()
 void getaverage(int *p)
 {
 	int i;
-	float avg,sum=0.0;
 	for(i=0;i<5;i++)
 	{
-		printf("%d",*(p+i));
+		printf("%d",(p+i));
 		sum=sum+p[i];
 	}
+	float avg,sum=0.0;
 	avg=sum/5;
 	printf("\naverage of array elements : %f",avg);
 }
@@ -334,16 +328,19 @@ int main()
 
 int main()
 {
+	
 	int n;
 	printf("enter no of elements in array :");
 	scanf("%d",&n);
 	
+
 	char *p=(char*) malloc(n*sizeof(char ));
 	int i;
 	
 	for(i=0;i<n;i++)
 	{
-		printf("Enter characters  %d :",i+1);
+		fflush(stdin);
+		printf("Enter characters  %d = ",i+1);
 		scanf("%c",&p[i]);
 	}
 	
